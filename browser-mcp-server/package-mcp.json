@@ -1,0 +1,101 @@
+{
+  "name": "browser-mcp",
+  "version": "1.0.0",
+  "description": "MCP Server for browser automation with Cloudflare bypass",
+  "main": "dist/index.js",
+  "bin": {
+    "browser-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "ws": "^8.14.2",
+    "uuid": "^9.0.1"
+  },
+  "mcp": {
+    "tools": [
+      {
+        "name": "browser_navigate",
+        "description": "Navigate to URL with Cloudflare bypass",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "url": { "type": "string", "format": "uri" },
+            "waitUntil": { 
+              "type": "string", 
+              "enum": ["load", "domcontentloaded", "networkidle"],
+              "default": "load"
+            },
+            "timeout": { "type": "number", "default": 30000 },
+            "bypassCloudflare": { "type": "boolean", "default": true }
+          },
+          "required": ["url"]
+        }
+      },
+      {
+        "name": "browser_click",
+        "description": "Click element with human-like behavior",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "selector": { "type": "string" },
+            "humanLike": { "type": "boolean", "default": true },
+            "waitForNavigation": { "type": "boolean", "default": false },
+            "timeout": { "type": "number", "default": 10000 }
+          },
+          "required": ["selector"]
+        }
+      },
+      {
+        "name": "browser_extract_filters",
+        "description": "Extract filters from category page",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "category": { "type": "string" },
+            "includeHidden": { "type": "boolean", "default": false },
+            "depth": { "type": "number", "default": 1 }
+          },
+          "required": ["category"]
+        }
+      },
+      {
+        "name": "browser_analyze_page",
+        "description": "Analyze page structure and performance",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "browser_screenshot",
+        "description": "Take screenshot of current page",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "fullPage": { "type": "boolean", "default": false },
+            "format": { "type": "string", "enum": ["png", "jpeg"], "default": "png" }
+          }
+        }
+      },
+      {
+        "name": "browser_wait",
+        "description": "Wait for condition",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "type": { 
+              "type": "string", 
+              "enum": ["selector", "timeout", "navigation", "cloudflare"]
+            },
+            "value": { "type": "string" },
+            "timeout": { "type": "number", "default": 30000 }
+          },
+          "required": ["type"]
+        }
+      }
+    ]
+  }
+}
+

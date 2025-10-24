@@ -1,0 +1,25 @@
+{
+  "server": {
+    "url": "ws://localhost:8080",
+    "apiKey": "your-api-key-here",
+    "reconnectDelay": 5000,
+    "maxReconnectAttempts": 10
+  },
+  "stealth": {
+    "enabled": true,
+    "randomizeFingerprints": true,
+    "humanBehavior": true
+  },
+  "performance": {
+    "maxConcurrentCommands": 3,
+    "commandTimeout": 30000,
+    "cacheEnabled": true
+  },
+  "logging": {
+    "level": "debug",
+    "console": true,
+    "storage": true
+  }
+}
+
+

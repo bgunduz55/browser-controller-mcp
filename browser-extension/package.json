@@ -1,0 +1,29 @@
+{
+  "name": "browser-mcp-extension",
+  "version": "1.0.0",
+  "description": "Chrome extension for browser automation with MCP server integration",
+  "main": "background.js",
+  "scripts": {
+    "build": "echo 'No build process required for Chrome extension'",
+    "test": "echo 'Tests can be run in Chrome DevTools'",
+    "lint": "echo 'Use Chrome DevTools for debugging'"
+  },
+  "keywords": [
+    "chrome-extension",
+    "browser-automation",
+    "mcp",
+    "websocket",
+    "stealth-mode",
+    "cloudflare-bypass"
+  ],
+  "author": "Browser MCP Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/browser-mcp-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/browser-mcp-extension/issues"
+  },
+  "homepage": "https://github.com/your-username/browser-mcp-extension#readme"
+}

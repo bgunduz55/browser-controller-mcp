@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "browser-mcp": {
+      "command": "npm",
+      "args": ["run", "dev"],
+      "cwd": "C:\\Users\\bgund\\OneDrive\\Belgeler\\Projects\\Java-Projects\\satbaa\\scraping\\browser-mcp-server",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  }
+}
+

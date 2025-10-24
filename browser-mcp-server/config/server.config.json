@@ -1,0 +1,46 @@
+{
+  "server": {
+    "port": 8080,
+    "host": "localhost",
+    "secure": false,
+    "maxConnections": 10,
+    "corsOrigins": ["http://localhost:*"]
+  },
+  "websocket": {
+    "heartbeatInterval": 30000,
+    "connectionTimeout": 60000,
+    "maxMessageSize": 1048576,
+    "pingInterval": 10000
+  },
+  "authentication": {
+    "enabled": true,
+    "apiKeyLength": 32,
+    "tokenExpiration": 86400000
+  },
+  "rateLimit": {
+    "enabled": true,
+    "maxRequests": 100,
+    "windowMs": 60000
+  },
+  "cloudflare": {
+    "maxRetries": 3,
+    "retryDelay": 5000,
+    "challengeTimeout": 30000,
+    "bypassEnabled": true
+  },
+  "extraction": {
+    "pageLoadTimeout": 30000,
+    "elementWaitTimeout": 10000,
+    "maxConcurrentExtractions": 3,
+    "cacheEnabled": true,
+    "cacheTTL": 3600000
+  },
+  "logging": {
+    "level": "info",
+    "file": "logs/server.log",
+    "maxSize": 10485760,
+    "maxFiles": 5
+  }
+}
+
+
